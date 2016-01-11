@@ -24,8 +24,8 @@ public class TestServer {
 
             ObjectOutputStream oos = new ObjectOutputStream(accept.getOutputStream());
             ObjectInputStream ois = new ObjectInputStream(accept.getInputStream());
-//            PosInfo posInfo = (PosInfo) ois.readObject();
-//            System.out.println("posId = " + posInfo.getPosId());
+            PosInfo posInfo = (PosInfo) ois.readObject();
+            System.out.println("posId = " + posInfo.getPosId());
 
             PosCommand posCommand = null;
             PosResult result = null;

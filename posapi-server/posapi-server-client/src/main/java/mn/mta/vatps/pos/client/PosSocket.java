@@ -15,6 +15,7 @@ import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
 
 /**
  * Created by nasanjargal on 1/11/16.
@@ -97,7 +98,7 @@ public class PosSocket {
                         outStream.writeObject(posResult);
                         outStream.flush();
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        MainClass.logger.log(Level.FINEST, e.getMessage(), e);
                     }
                 }
             }).start();

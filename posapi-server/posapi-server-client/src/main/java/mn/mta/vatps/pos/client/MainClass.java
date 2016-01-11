@@ -31,7 +31,9 @@ public class MainClass {
                 name = name + ".dll";
             }
 
-            PosClient.loadLibrary(posApiDirPath + File.separator + name);
+            String libFilePath = posApiDirPath + File.separator + name;
+            System.out.println("libFilePath = " + libFilePath);
+            PosClient.loadLibrary(libFilePath);
             int port = Integer.parseInt(args[1]);
             Socket socket = new Socket("localhost", port);
 
@@ -47,7 +49,7 @@ public class MainClass {
     }
 
     private static void initLogger(String posApiDirPath) throws IOException {
-        FileHandler fh = new FileHandler(posApiDirPath + File.separator + "posapi.log");
+        FileHandler fh = new FileHandler(posApiDirPath + File.separator + "posapi.log", true);
         logger.addHandler(fh);
         SimpleFormatter formatter = new SimpleFormatter();
         fh.setFormatter(formatter);

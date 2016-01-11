@@ -51,7 +51,7 @@ public class PosApiService {
             output.close();
 
             PosServerSocket pss = (PosServerSocket) ctx.getAttribute(Helper.POS_SOCKET_SERVER);
-            pss.execClient(ctx, pathName);
+            pss.execClient(ctx, path.getPath());
 
         } else {
             throw new IOException("Can't make directories : [" + path.toString() + "]");
