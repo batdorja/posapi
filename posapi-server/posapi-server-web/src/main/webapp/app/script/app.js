@@ -38,7 +38,6 @@ posApiApp.controller('posApiListController', function ($scope, $http, $interval)
     }
 
     $scope.updateApiStatus = function (posApi) {
-        console.log(posApi);
         $http({
             method: 'get',
             url: 'rest/status/api_status',

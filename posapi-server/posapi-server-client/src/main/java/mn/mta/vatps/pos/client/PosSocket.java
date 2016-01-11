@@ -115,7 +115,7 @@ public class PosSocket {
             posInfo.setPosId((String) result.get("posId"));
             posInfo.setBranchNo((String) result.get("branchNo"));
             posInfo.setRegisterNo((String) result.get("registerNo"));
-            posInfo.setPosApiPath(MainClass.posApiPath);
+            posInfo.setPosApiPath(MainClass.posApiDirPath);
             posInfo.setSending(this.sending);
 
             Map extraInfo = (Map) result.get("extraInfo");
